@@ -1,0 +1,16 @@
+# generated datasets and temporary run files, these get large
+data/
+scratch/
+
+# regenerated on every run, the canonical copies live in docs/
+results/
+
+# personal notes, and the bundle that embeds them
+NOTES.md
+external_sort_master.txt
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
