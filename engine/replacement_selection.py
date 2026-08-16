@@ -26,23 +26,24 @@ from .io_channel import BinaryRunReader, BinaryRunWriter, IOConfig, IOStats
 def sift_down(buf: list[int], start: int, size: int) -> int:
     """Push buf[start] down until the heap property holds. Returns levels moved.
 
-    Bounded strictly by `size` so it never touches the parked tail.
+    `item` is held in a local and the children are compared against each other
+    before being compared against it. Comparing them against buf[start] instead
+    reads a slot that has already been overwritten, which breaks the heap
+    quietly rather than loudly.
     """
     item = buf[start]
     i = start
+    child = 2 * i + 1
     steps = 0
-    while True:
-        left = 2 * i + 1
-        right = left + 1
-        smallest = i
-        if left < size and buf[left] < item:
-            smallest = left
-        if right < size and buf[right] < buf[smallest]:
-            smallest = right
-        if smallest == i:
+    while child < size:
+        right = child + 1
+        if right < size and buf[right] < buf[child]:
+            child = right
+        if buf[child] >= item:
             break
-        buf[i] = buf[smallest]
-        i = smallest
+        buf[i] = buf[child]
+        i = child
+        child = 2 * i + 1
         steps += 1
     buf[i] = item
     return steps
