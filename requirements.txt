@@ -1,0 +1,9 @@
+# Reading resident set size portably. The stdlib `resource` module is Unix
+# only, and the Windows equivalent is thirty lines of ctypes.
+psutil>=5.9
+
+# Only needed for the charts. `--no-plot` skips them.
+matplotlib>=3.5
+
+# Only needed to run the test suite.
+pytest>=7.0
