@@ -1,0 +1,82 @@
+{
+  "sweep": [
+    [
+      0.0,
+      1.7914760999847203,
+      0.7200017999857664
+    ],
+    [
+      1.0,
+      6.946739500039257,
+      8.883565000025555
+    ],
+    [
+      2.0,
+      11.093247000011615,
+      14.871064899954945
+    ],
+    [
+      4.0,
+      18.98813849990256,
+      26.648584499955177
+    ],
+    [
+      8.0,
+      34.81296040001325,
+      50.26296739990357
+    ]
+  ],
+  "break_even_ms": 0.5443135245901639,
+  "baseline": {
+    "knuth": {
+      "engine": "knuth",
+      "distribution": "uniform",
+      "records": 1000000,
+      "budget_mb": 2.0,
+      "capacity_records": 33666,
+      "fan_in": 20,
+      "latency_ms": 0.0,
+      "runs_generated": 16,
+      "run_multiplier": 1.9615754767421136,
+      "merge_passes": 1,
+      "max_open_files": 16,
+      "generation_s": 1.5175884999334812,
+      "merge_s": 0.2738857000367716,
+      "total_s": 1.7914760999847203,
+      "cpu_s": 1.765625,
+      "io_wait_s": 0.02585109998472035,
+      "io_ops": 3920,
+      "bytes_written": 16000000,
+      "io_amplification": 4.0,
+      "sift_steps_per_record": 13.122927,
+      "peak_rss_mb": 29.200384,
+      "rss_growth_mb": 0.417792,
+      "verified": true
+    },
+    "chunked": {
+      "engine": "chunked",
+      "distribution": "uniform",
+      "records": 1000000,
+      "budget_mb": 2.0,
+      "capacity_records": 33666,
+      "fan_in": 20,
+      "latency_ms": 0.0,
+      "runs_generated": 30,
+      "run_multiplier": 1.0,
+      "merge_passes": 2,
+      "max_open_files": 20,
+      "generation_s": 0.22044619999360293,
+      "merge_s": 0.49955329997465014,
+      "total_s": 0.7200017999857664,
+      "cpu_s": 0.703125,
+      "io_wait_s": 0.01687679998576641,
+      "io_ops": 5872,
+      "bytes_written": 24000000,
+      "io_amplification": 6.0,
+      "sift_steps_per_record": 0.0,
+      "peak_rss_mb": 29.392896,
+      "rss_growth_mb": 0.192512,
+      "verified": true
+    }
+  }
+}
