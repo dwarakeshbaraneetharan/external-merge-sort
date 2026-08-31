@@ -1,5 +1,7 @@
 # External merge sort: replacement selection vs chunked sorting
 
+[![tests](https://github.com/dwarakeshbaraneetharan/external-merge-sort/actions/workflows/tests.yml/badge.svg)](https://github.com/dwarakeshbaraneetharan/external-merge-sort/actions/workflows/tests.yml)
+
 Sorts files far larger than its memory budget, with two different run-generation
 algorithms behind the same I/O layer so they can be benchmarked against each other.
 
