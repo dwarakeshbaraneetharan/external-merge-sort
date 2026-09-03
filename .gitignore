@@ -14,3 +14,6 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
+
+# local helper that bundles NOTES.md into one file
+bundle.py
