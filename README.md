@@ -202,3 +202,5 @@ to avoid the reverse-sorted collapse.
 - Nyberg et al., [AlphaSort: A Cache-Sensitive Parallel External Sort](https://jimgray.azurewebsites.net/papers/alphasortsigmod.pdf), SIGMOD 1994
 - Larson, *External sorting: Run formation revisited*, IEEE TKDE 2003
 - Geoghegan, [The case for removing replacement selection sort](https://postgrespro.com/list/id/CAH2-WzmmNjG_K0R9nqYwMq3zjyJJK+hCbiZYNGhAy-Zyjs64GQ@mail.gmail.com), pgsql-hackers 2017
+
+MIT licensed.
