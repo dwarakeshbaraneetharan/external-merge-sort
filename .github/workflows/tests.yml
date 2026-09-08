@@ -1,0 +1,30 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # matplotlib is only needed for charts, which CI does not draw.
+      - run: pip install pytest psutil
+
+      # test_findings.py re-derives the README's result here, so the run counts,
+      # merge depth and I/O amplification are checked on hardware I do not own.
+      - run: python -m pytest tests/ -v
+
+      - run: python cli.py bench --records 200000 --budget-mb 2 --no-plot
